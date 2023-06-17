@@ -1,0 +1,12 @@
+Logo link (a tag)               //img[@alt='logo']
+Course Gallery link (a tag)     //a[@href='/quizzes-list']/div[@bis_skin_checked='1']
+Sign In button (a tag)          //a[@data='record-data']/div[@id='log-in-button']
+Sign Up button (a tag)          //a[@class='menu-item sign-in-button']
+
+Email field (input tag)             //input[@id='email']
+Password field (input tag)          //input[@id='password']
+Log In button (button tag)          //button[@class='auth-page-main-block-form-submit-button']
+Remember me checkbox (input tag)    //input[@id='auth-page-remember-me']
+
+
+//body/div[@id='app']/div[1]/div[2]/form[1]/div[3]/div[1]/label[1]
