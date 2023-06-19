@@ -1,6 +1,7 @@
 package testcases;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -29,7 +30,7 @@ public class FirstTest {
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//a[@data='record-data']/div[@id='log-in-button']")).click();
+        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
 
     }
     @Test
@@ -44,7 +45,7 @@ public class FirstTest {
 
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//a[@data='record-data']/div[@id='log-in-button']")).click();
+        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
 
         System.out.println("Email field is displayed: " + driver.findElement(By.xpath("//input[@id='email']")).isDisplayed());
         System.out.println("Password field is displayed: " + driver.findElement(By.xpath("//input[@id='password']")).isDisplayed());
@@ -63,10 +64,10 @@ public class FirstTest {
 
         Thread.sleep(3000);
 
-        driver.findElement(By.xpath("//a[@data='record-data']/div[@id='log-in-button']")).click();
+        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("v.kalinin.m94@gmail.com");
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123asd");
-        driver.findElement(By.xpath("//button[@class='auth-page-main-block-form-submit-button']")).click();
+        driver.findElement(By.xpath("//button[@class='auth-page-main-block-form-submit-button']")).sendKeys(Keys.ENTER);
 
     }
     @Test
@@ -79,12 +80,12 @@ public class FirstTest {
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//a[@data='record-data']/div[@id='log-in-button']")).click();
+        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("v.kalinin.m94@gmail.com");
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123asd");
         driver.findElement(By.xpath("//button[@class='auth-page-main-block-form-submit-button']")).click();
 
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
         System.out.println("Email is incorrect: " + driver.findElement(By.xpath("//p[contains(text(),'email is incorrect')]")).isDisplayed());
 
@@ -99,7 +100,7 @@ public class FirstTest {
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//a[@data='record-data']/div[@id='log-in-button']")).click();
+        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
 
         Thread.sleep(2000);
 
