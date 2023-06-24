@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c25e8ef-4f43-4409-9ef6-23d845e377ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/testcases/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/FirstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testcases/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/SecondTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +13,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/week2hwk" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -27,15 +40,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/KalininTestAutomationFramework/TestFrameworkAuto&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "test",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/KalininTestAutomationFramework/TestFrameworkAuto"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="FirstTest.openBrowser" type="TestNG" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="KalininTestAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTest.EmailPasswordFieldsAndLoginButtonCheck" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="KalininTestAutomationFramework" />
       <extension name="coverage">
         <pattern>
@@ -44,7 +70,61 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.FirstTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
+      <option name="METHOD_NAME" value="EmailPasswordFieldsAndLoginButtonCheck" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTest.InvalidEmailAndPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="KalininTestAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testcases" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
+      <option name="METHOD_NAME" value="InvalidEmailAndPassword" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTest.ValidateErrorAfterInvalidInformation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="KalininTestAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testcases" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
+      <option name="METHOD_NAME" value="ValidateErrorAfterInvalidInformation" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTest.openBrowser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="KalininTestAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testcases" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
       <option name="METHOD_NAME" value="openBrowser" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -55,7 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.FirstTest.openBrowser" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="TestNG.SecondTest.ValidateErrorAfterInvalidInformation" />
+        <item itemvalue="TestNG.SecondTest.InvalidEmailAndPassword" />
+        <item itemvalue="TestNG.SecondTest.EmailPasswordFieldsAndLoginButtonCheck" />
+        <item itemvalue="TestNG.SecondTest.openBrowser" />
       </list>
     </recent_temporary>
   </component>
