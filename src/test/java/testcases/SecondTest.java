@@ -5,10 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import java.sql.SQLOutput;
-import java.util.concurrent.TimeUnit;
-
-public class FirstTest {
+public class SecondTest {
     @Test
     public void openWebSite() throws InterruptedException {
 

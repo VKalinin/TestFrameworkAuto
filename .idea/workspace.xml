@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c25e8ef-4f43-4409-9ef6-23d845e377ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testcases/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/SecondTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "week3homework",
+    "git-widget-placeholder": "test",
     "last_opened_file_path": "C:/Users/user/IdeaProjects/KalininTestAutomationFramework/TestFrameworkAuto"
   }
 }]]></component>
@@ -61,7 +61,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTest.EmailPasswordFieldsAndLoginButtonCheck" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondTest.EmailPasswordFieldsAndLoginButtonCheck" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="KalininTestAutomationFramework" />
       <extension name="coverage">
         <pattern>
@@ -70,7 +70,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.FirstTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
       <option name="METHOD_NAME" value="EmailPasswordFieldsAndLoginButtonCheck" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -79,7 +79,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTest.InvalidEmailAndPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondTest.InvalidEmailAndPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="KalininTestAutomationFramework" />
       <extension name="coverage">
         <pattern>
@@ -88,7 +88,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.FirstTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
       <option name="METHOD_NAME" value="InvalidEmailAndPassword" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -97,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTest.ValidateErrorAfterInvalidInformation" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondTest.ValidateErrorAfterInvalidInformation" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="KalininTestAutomationFramework" />
       <extension name="coverage">
         <pattern>
@@ -106,7 +106,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.FirstTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
       <option name="METHOD_NAME" value="ValidateErrorAfterInvalidInformation" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -115,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstTest.openBrowser" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondTest.openBrowser" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="KalininTestAutomationFramework" />
       <extension name="coverage">
         <pattern>
@@ -124,7 +124,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testcases" />
-      <option name="MAIN_CLASS_NAME" value="testcases.FirstTest" />
+      <option name="MAIN_CLASS_NAME" value="testcases.SecondTest" />
       <option name="METHOD_NAME" value="openBrowser" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -136,10 +136,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="TestNG.FirstTest.ValidateErrorAfterInvalidInformation" />
-        <item itemvalue="TestNG.FirstTest.InvalidEmailAndPassword" />
-        <item itemvalue="TestNG.FirstTest.EmailPasswordFieldsAndLoginButtonCheck" />
-        <item itemvalue="TestNG.FirstTest.openBrowser" />
+        <item itemvalue="TestNG.SecondTest.ValidateErrorAfterInvalidInformation" />
+        <item itemvalue="TestNG.SecondTest.InvalidEmailAndPassword" />
+        <item itemvalue="TestNG.SecondTest.EmailPasswordFieldsAndLoginButtonCheck" />
+        <item itemvalue="TestNG.SecondTest.openBrowser" />
       </list>
     </recent_temporary>
   </component>
