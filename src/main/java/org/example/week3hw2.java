@@ -52,6 +52,15 @@ public class week3hw2 {
             if (i % 2 == 0){
             System.out.println(i);
             }
+
+            //Task 4
+
+        int i = 0;
+
+        for(i = 0; i<24; i++){
+            if (i % 2 == 0){
+            System.out.println(i);
+            }
         }
     }
 }
