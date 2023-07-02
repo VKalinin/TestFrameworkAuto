@@ -3,105 +3,87 @@ package testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SecondTest {
-    @Test
-    public void openWebSite() throws InterruptedException {
+
+
+    public String websiteURL = "https://test.my-fork.com/";
+    public ChromeDriver driver;
+    public  Locators locators;
+
+
+    @BeforeMethod
+    public void setUp(){
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver();
+        locators = new Locators();
 
-        ChromeDriver driver = new ChromeDriver();
+    }
 
-        driver.get("https://test.my-fork.com/");
+
+    public void openWebSite() throws InterruptedException {
+
+        driver.get(websiteURL);
         driver.manage().window().maximize();
     }
     @Test
     public void openSignInPage() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
-
-        ChromeDriver driver = new ChromeDriver();
-
-        driver.get("https://test.my-fork.com/");
-        driver.manage().window().maximize();
-        Thread.sleep(2000);
-
-        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
+        openWebSite();
+        driver.findElement(locators.signInButton).click();
 
     }
     @Test
     public void EmailPasswordFieldsAndLoginButtonCheck() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
-
-        ChromeDriver driver = new ChromeDriver();
-
-        driver.get("https://test.my-fork.com/");
-        driver.manage().window().maximize();
+        openWebSite();
 
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
+        driver.findElement(locators.signInButton).click();
 
-        System.out.println("Email field is displayed: " + driver.findElement(By.xpath("//input[@id='email']")).isDisplayed());
-        System.out.println("Password field is displayed: " + driver.findElement(By.xpath("//input[@id='password']")).isDisplayed());
-        System.out.println("Login Button is displayed: " + driver.findElement(By.xpath("//button[@class='auth-page-main-block-form-submit-button']")).isDisplayed());
+        System.out.println("Email field is displayed: " + driver.findElement(locators.emailField).isDisplayed());
+        System.out.println("Password field is displayed: " + driver.findElement(locators.passwordField).isDisplayed());
+        System.out.println("Login Button is displayed: " + driver.findElement(locators.logInButton).isDisplayed());
 
     }
-    @Test
+
+    public void fillUpCredentials(String email, String password){
+        driver.findElement(locators.emailField).sendKeys(email);
+        driver.findElement(locators.passwordField).sendKeys(password);
+
+    }
     public void InvalidEmailAndPassword() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
+        openWebSite();
 
-        ChromeDriver driver = new ChromeDriver();
-
-        driver.get("https://test.my-fork.com/");
-        driver.manage().window().maximize();
-
-        Thread.sleep(3000);
-
-        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
-        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("v.kalinin.m94@gmail.com");
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123asd");
-        driver.findElement(By.xpath("//button[@class='auth-page-main-block-form-submit-button']")).sendKeys(Keys.ENTER);
+        driver.findElement(locators.signInButton).click();
+        fillUpCredentials("v.kalinin.m94@gmail.com", "123asd");
+        driver.findElement(locators.logInButton).sendKeys(Keys.ENTER);
 
     }
     @Test
     public void ValidateErrorAfterInvalidInformation() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
-
-        ChromeDriver driver = new ChromeDriver();
-        driver.get("https://test.my-fork.com/");
-        driver.manage().window().maximize();
-        Thread.sleep(2000);
-
-        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
-        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("v.kalinin.m94@gmail.com");
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123asd");
-        driver.findElement(By.xpath("//button[@class='auth-page-main-block-form-submit-button']")).click();
-
+        InvalidEmailAndPassword();
         Thread.sleep(5000);
 
-        System.out.println("Email is incorrect: " + driver.findElement(By.xpath("//p[contains(text(),'email is incorrect')]")).isDisplayed());
+        System.out.println("Email is incorrect: " + driver.findElement(locators.incorrectEmail).isDisplayed());
 
     }
     @Test
     public void RememberMeCheckedByDefaultValidation() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
-
-        ChromeDriver driver = new ChromeDriver();
-        driver.get("https://test.my-fork.com/");
-        driver.manage().window().maximize();
+        openWebSite();
         Thread.sleep(2000);
 
-        driver.findElement(By.xpath("//div[@id='app']//a[@class='menu-item log-in-button']")).click();
-
-        Thread.sleep(2000);
-
-        System.out.println("Remember Me checked by default: " + driver.findElement(By.xpath("//input[@id='auth-page-remember-me']")).isSelected());
+        System.out.println("Remember Me checked by default: " + driver.findElement(locators.rememberMeChekbox).isSelected());
 
     }
 }
