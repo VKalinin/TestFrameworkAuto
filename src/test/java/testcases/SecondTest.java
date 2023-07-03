@@ -10,11 +10,9 @@ import org.testng.annotations.Test;
 
 public class SecondTest {
 
-
     public String websiteURL = "https://test.my-fork.com/";
     public ChromeDriver driver;
     public  Locators locators;
-
 
     @BeforeMethod
     public void setUp(){
@@ -26,14 +24,11 @@ public class SecondTest {
         locators = new Locators();
 
     }
-
-
     public void openWebSite() throws InterruptedException {
 
         driver.get(websiteURL);
         driver.manage().window().maximize();
     }
-    @Test
     public void openSignInPage() throws InterruptedException {
 
         openWebSite();
@@ -54,7 +49,6 @@ public class SecondTest {
         System.out.println("Login Button is displayed: " + driver.findElement(locators.logInButton).isDisplayed());
 
     }
-
     public void fillUpCredentials(String email, String password){
         driver.findElement(locators.emailField).sendKeys(email);
         driver.findElement(locators.passwordField).sendKeys(password);
@@ -73,7 +67,7 @@ public class SecondTest {
     public void ValidateErrorAfterInvalidInformation() throws InterruptedException {
 
         InvalidEmailAndPassword();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
         System.out.println("Email is incorrect: " + driver.findElement(locators.incorrectEmail).isDisplayed());
 
@@ -81,13 +75,12 @@ public class SecondTest {
     @Test
     public void RememberMeCheckedByDefaultValidation() throws InterruptedException {
 
-        openWebSite();
+        openSignInPage();
         Thread.sleep(2000);
 
         System.out.println("Remember Me checked by default: " + driver.findElement(locators.rememberMeChekbox).isSelected());
 
     }
-
     @AfterTest
     public void driverClose(){
         driver.close();
