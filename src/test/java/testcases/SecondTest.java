@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -85,5 +86,10 @@ public class SecondTest {
 
         System.out.println("Remember Me checked by default: " + driver.findElement(locators.rememberMeChekbox).isSelected());
 
+    }
+
+    @AfterTest
+    public void driverClose(){
+        driver.close();
     }
 }
