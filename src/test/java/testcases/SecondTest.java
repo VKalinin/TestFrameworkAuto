@@ -1,5 +1,10 @@
 package testcases;
 
+import PageObjects.HomePage;
+import PageObjects.SignUpPage;
+import PageObjects.SignInPage;
+import PageObjects.SignInPage;
+import PageObjects.SignUpPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,81 +13,53 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SecondTest {
+public class SecondTest extends BaseTest {
 
-    public String websiteURL = "https://test.my-fork.com/";
-    public ChromeDriver driver;
-    public  Locators locators;
-
-    @BeforeMethod
-    public void setUp(){
-
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\IdeaProjects\\KalininTestAutomationFramework\\src\\test\\resources\\executables\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver();
-        locators = new Locators();
-
-    }
-    public void openWebSite() throws InterruptedException {
-
-        driver.get(websiteURL);
-        driver.manage().window().maximize();
-    }
+    @Test
     public void openSignInPage() throws InterruptedException {
-
-        openWebSite();
-        driver.findElement(locators.signInButton).click();
+        homePage.clickSignIn();
+    }
+    @Test
+    public void emailPasswordFieldsAndLoginButtonCheck() throws InterruptedException {
+        homePage.clickSignIn();
+        signInPage.credentialsAndLogInButtonCheck();
+        signInPage.credentialsAndLogInButtonCheckReport();
+    }
+    @Test
+    public void fillUpCredentials() throws InterruptedException {
+        homePage.clickSignIn();
+        signInPage.fillInTheSignInForm();
+    }
+    @Test
+    public void invalidEmailAndPassword() throws InterruptedException {
+        homePage.clickSignIn();
+        signInPage.fillInTheSignInForm();
+    }
+    @Test
+    public void validateErrorAfterInvalidInformation() throws InterruptedException {
+        homePage.clickSignIn();
+        signInPage.fillInTheSignInForm();
+        signInPage.errorMessageIsDisplayed();
+    }
+    @Test
+    public void rememberMeCheckedByDefaultValidation() throws InterruptedException {
+        homePage.clickSignIn();
+        signInPage.rememberMeIsChecked();
 
     }
     @Test
-    public void EmailPasswordFieldsAndLoginButtonCheck() throws InterruptedException {
-
-        openWebSite();
-
-        Thread.sleep(2000);
-
-        driver.findElement(locators.signInButton).click();
-
-        System.out.println("Email field is displayed: " + driver.findElement(locators.emailField).isDisplayed());
-        System.out.println("Password field is displayed: " + driver.findElement(locators.passwordField).isDisplayed());
-        System.out.println("Login Button is displayed: " + driver.findElement(locators.logInButton).isDisplayed());
-
+    public void fillSignUp() throws InterruptedException {
+        signUpPage.openRegistrationPage();
+        signUpPage.fillRegistrationForms();
     }
-    public void fillUpCredentials(String email, String password){
-        driver.findElement(locators.emailField).sendKeys(email);
-        driver.findElement(locators.passwordField).sendKeys(password);
 
-    }
-    public void InvalidEmailAndPassword() throws InterruptedException {
-
-        openWebSite();
-
-        driver.findElement(locators.signInButton).click();
-        fillUpCredentials("v.kalinin.m94@gmail.com", "123asd");
-        driver.findElement(locators.logInButton).sendKeys(Keys.ENTER);
-
-    }
     @Test
-    public void ValidateErrorAfterInvalidInformation() throws InterruptedException {
+    public void courseGalleryPage() throws InterruptedException {
+        homePage.openHomePage();
+        courseGalleryPage.openCourseGalleryPage();
+        courseGalleryPage.openTestingTab();
+        courseGalleryPage.openSql101TestTab();
+        courseGalleryPage.backToHomePage();
 
-        InvalidEmailAndPassword();
-        Thread.sleep(3000);
-
-        System.out.println("Email is incorrect: " + driver.findElement(locators.incorrectEmail).isDisplayed());
-
-    }
-    @Test
-    public void RememberMeCheckedByDefaultValidation() throws InterruptedException {
-
-        openSignInPage();
-        Thread.sleep(2000);
-
-        System.out.println("Remember Me checked by default: " + driver.findElement(locators.rememberMeChekbox).isSelected());
-
-    }
-    @AfterTest
-    public void driverClose(){
-        driver.close();
     }
 }
