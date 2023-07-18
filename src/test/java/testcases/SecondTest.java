@@ -60,6 +60,5 @@ public class SecondTest extends BaseTest {
         courseGalleryPage.openTestingTab();
         courseGalleryPage.openSql101TestTab();
         courseGalleryPage.backToHomePage();
-
     }
 }
