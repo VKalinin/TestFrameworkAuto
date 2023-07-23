@@ -22,4 +22,9 @@ public class HomePage extends BaseMain {
         driver.manage().window().maximize();
         driver.findElement(locators.signInButton).click();
     }
+    public void clickSignUp(){
+        driver.get(websiteURL);
+        driver.manage().window().maximize();
+        driver.findElement(locators.signUpButton).click();
+    }
 }

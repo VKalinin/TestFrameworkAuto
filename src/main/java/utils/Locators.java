@@ -1,6 +1,11 @@
 package utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Locators {
     public By logoLink = By.xpath("//img[@alt='logo']");
@@ -23,4 +28,5 @@ public class Locators {
     //course gallery page
     public By testingTab = By.xpath("//div[@id='app']/div[2]/div[2]/div[2]");
     public By sql101TestLab = By.xpath("//a[@target='_blank']//div[@class='quiz-item-button continue-button']");
+
 }

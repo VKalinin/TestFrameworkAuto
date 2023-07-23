@@ -61,4 +61,11 @@ public class SecondTest extends BaseTest {
         courseGalleryPage.openSql101TestTab();
         courseGalleryPage.backToHomePage();
     }
+
+    @Test
+    public void signUpPageAllElementsInTheDropDown(){
+        homePage.openHomePage();
+        homePage.clickSignUp();
+        signUpPage.writeDropDownInConsole();
+    }
 }
