@@ -3,24 +3,28 @@ package PageObjects;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Locators;
+
+import java.time.Duration;
 
 public class SignInPage extends BaseMain{
 
     Locators locators = new Locators();
     public SignInPage(WebDriver driver){
-
         super(driver);
     }
+
+    WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
     public String email = "v.kalinin.m94@gmail.com";
     public String password = "test123";
     public void fillInTheSignInForm() throws InterruptedException {
         driver.findElement(locators.emailField).sendKeys(email);
         driver.findElement(locators.passwordField).sendKeys(password);
-        Thread.sleep(3000);
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(locators.logInButton));
         driver.findElement(locators.logInButton).click();
-        Thread.sleep(5000);
     }
     public void credentialsAndLogInButtonCheck(){
         driver.findElement(locators.emailField).isDisplayed();
@@ -36,6 +40,7 @@ public class SignInPage extends BaseMain{
     }
 
     public void errorMessageIsDisplayed() throws InterruptedException {
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(locators.incorrectEmail));
         System.out.println("Invalid email and/or password: " + driver.findElement(locators.incorrectEmail).isDisplayed());
     }
 

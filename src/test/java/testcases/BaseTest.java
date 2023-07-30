@@ -7,8 +7,13 @@ import PageObjects.SignUpPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BaseTest {
 
@@ -31,8 +36,11 @@ public class BaseTest {
         signInPage = new SignInPage(driver);
         signUpPage = new SignUpPage(driver);
         courseGalleryPage = new CourseGalleryPage(driver);
-
-
+        driver.manage().window().maximize();
+    }
+    public void nextTab(int tab){
+        List<String> tabHandler = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabHandler.get(tab));
     }
     @AfterTest
     public void driverClose(){

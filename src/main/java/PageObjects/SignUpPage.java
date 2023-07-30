@@ -26,7 +26,6 @@ public class SignUpPage extends BaseMain{
 
     public void openRegistrationPage(){
         driver.get(registrationLink);
-        driver.manage().window().maximize();
     }
 
     public void fillRegistrationForms() throws InterruptedException {
@@ -35,13 +34,12 @@ public class SignUpPage extends BaseMain{
         driver.findElement(locators.email).sendKeys(email);
         driver.findElement(locators.createPassword).sendKeys(password);
         driver.findElement(locators.confirmPassword).sendKeys(confirmPassword);
-        Thread.sleep(5000);
     }
     public void writeDropDownInConsole(){
         WebElement searchDropDownElement;
         searchDropDownElement = driver.findElement(By.id("job-title"));
         Select searchDropDown = new Select(searchDropDownElement);
-        List<WebElement> options = new ArrayList<>();
+        List<WebElement> options;
         options = searchDropDown.getOptions();
         int listSize = options.size();
 

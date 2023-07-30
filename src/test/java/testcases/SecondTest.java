@@ -20,6 +20,10 @@ public class SecondTest extends BaseTest {
         homePage.clickSignIn();
     }
     @Test
+    public void openingTwoTabsAndChangingToTheFirst(){
+        homePage.openHomePagePlusNewTabAndScroll();
+    }
+    @Test
     public void emailPasswordFieldsAndLoginButtonCheck() throws InterruptedException {
         homePage.clickSignIn();
         signInPage.credentialsAndLogInButtonCheck();
