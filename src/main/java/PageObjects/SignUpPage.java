@@ -47,4 +47,13 @@ public class SignUpPage extends BaseMain{
             System.out.println(options.get(i).getText());
         }
     }
+    public int numberOfDropDownElements(){
+        WebElement searchNumberOfDropDownElements;
+        searchNumberOfDropDownElements = driver.findElement(By.id("job-title"));
+        Select amountDropDownElements = new Select(searchNumberOfDropDownElements);
+        List<WebElement> amount;
+        amount = amountDropDownElements.getOptions();
+        int quantity = amount.size();
+        return quantity;
+    }
 }

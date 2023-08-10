@@ -38,12 +38,8 @@ public class BaseTest {
         courseGalleryPage = new CourseGalleryPage(driver);
         driver.manage().window().maximize();
     }
-    public void nextTab(int tab){
-        List<String> tabHandler = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabHandler.get(tab));
-    }
     @AfterTest
     public void driverClose(){
-        driver.close();
+//        driver.close();
     }
 }

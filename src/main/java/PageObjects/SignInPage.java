@@ -43,9 +43,13 @@ public class SignInPage extends BaseMain{
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(locators.incorrectEmail));
         System.out.println("Invalid email and/or password: " + driver.findElement(locators.incorrectEmail).isDisplayed());
     }
+    public boolean errorMessageIsDisplayedAfterCredentials(){
+        boolean expectedResult = driver.findElement(locators.incorrectEmail).isDisplayed();
+        return expectedResult;
+    }
 
     public void rememberMeIsChecked(){
-        System.out.println("Remember Me checkbox is checked: " + driver.findElement(locators.rememberMeChekbox).isSelected());
+        System.out.println("Remember Me checkbox is checked: " + driver.findElement(locators.rememberMeCheckbox).isSelected());
     }
 
 }

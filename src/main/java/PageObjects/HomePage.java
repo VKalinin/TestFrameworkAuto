@@ -1,5 +1,6 @@
 package PageObjects;
 
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import utils.Locators;
@@ -8,10 +9,10 @@ public class HomePage extends BaseMain {
 
     Locators locators = new Locators();
 
-
     public HomePage(WebDriver driver){
         super(driver);
     }
+
     String websiteURL = "https://test.my-fork.com/";
 
     public void openHomePage(){
