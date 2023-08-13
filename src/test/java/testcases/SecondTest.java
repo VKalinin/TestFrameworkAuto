@@ -17,26 +17,6 @@ public class SecondTest extends BaseTest {
     String expectedResult;
     String actualResult;
     @Test
-    public void openSignInPage() throws InterruptedException {
-        homePage.clickSignIn();
-        actualResult = driver.getTitle();
-        expectedResult = "Sign in";
-        //String assert passed
-        Assert.assertEquals(actualResult,expectedResult);
-        System.out.println("Title is correct");
-    }
-    @Test
-    public void openSignInPageSoftAssert() throws InterruptedException {
-        homePage.clickSignIn();
-        actualResult = driver.getTitle();
-        expectedResult = "Sign in";
-        //String soft assert passed
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualResult,expectedResult);
-        System.out.println("Title is correct");
-        softAssert.assertAll();
-    }
-    @Test
     public void openingTwoTabsAndChangingToTheFirst(){
         homePage.openHomePagePlusNewTabAndScroll();
     }
@@ -57,26 +37,6 @@ public class SecondTest extends BaseTest {
         signInPage.fillInTheSignInForm();
     }
     @Test
-    public void validateErrorAfterInvalidInformation() throws InterruptedException {
-        homePage.clickSignIn();
-        signInPage.fillInTheSignInForm();
-        signInPage.errorMessageIsDisplayed();
-        //boolean assert passed
-        boolean errorMessageIsDisplayedTrue = true;
-        Assert.assertEquals(errorMessageIsDisplayedTrue, signInPage.errorMessageIsDisplayedAfterCredentials());
-    }
-    @Test
-    public void validateErrorAfterInvalidInformationSoftAssert() throws InterruptedException {
-        homePage.clickSignIn();
-        signInPage.fillInTheSignInForm();
-        signInPage.errorMessageIsDisplayed();
-        //boolean soft assert failed
-        SoftAssert softAssert = new SoftAssert();
-        boolean errorMessageIsDisplayedTrue = false;
-        softAssert.assertEquals(errorMessageIsDisplayedTrue, signInPage.errorMessageIsDisplayedAfterCredentials());
-        softAssert.assertAll();
-    }
-    @Test
     public void rememberMeCheckedByDefaultValidation() throws InterruptedException {
         homePage.clickSignIn();
         signInPage.rememberMeIsChecked();
@@ -87,25 +47,30 @@ public class SecondTest extends BaseTest {
         signUpPage.fillRegistrationForms();
     }
     @Test
-    public void numberOfDropDownElementsRegistrationPage(){
+    public void signUpPageAllElementsInTheDropDown(){
+        homePage.openHomePage();
+        homePage.clickSignUp();
+        signUpPage.writeDropDownInConsole();
+    }
+    @Test
+    public void openSignInPageHardAssert() throws InterruptedException {
+        homePage.clickSignIn();
+        actualResult = driver.getTitle();
+        expectedResult = "Sign in";
+        //String assert passed
+        Assert.assertEquals(actualResult,expectedResult);
+        System.out.println("Title is correct");
+        homePage.clickSignIn();
+        signInPage.fillInTheSignInForm();
+        signInPage.errorMessageIsDisplayed();
+        //boolean assert passed
+        boolean errorMessageIsDisplayedTrue = true;
+        Assert.assertEquals(errorMessageIsDisplayedTrue, signInPage.errorMessageIsDisplayedAfterCredentials());
         int actualResultInt = 14;
         signUpPage.openRegistrationPage();
         //int assert passed
         Assert.assertEquals(actualResultInt,signUpPage.numberOfDropDownElements());
         System.out.println("Actual result = " + actualResultInt + "\nExpected result = " + signUpPage.numberOfDropDownElements());
-    }
-    @Test
-    public void numberOfDropDownElementsRegistrationPageSoftAssert(){
-        int actualResultInt = 13;
-        signUpPage.openRegistrationPage();
-        //int soft assert failed
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualResultInt,signUpPage.numberOfDropDownElements());
-        softAssert.assertAll();
-    }
-
-    @Test
-    public void courseGalleryPage() throws InterruptedException {
         homePage.openHomePage();
         courseGalleryPage.openCourseGalleryPage();
         //Int assert failed
@@ -114,25 +79,39 @@ public class SecondTest extends BaseTest {
         courseGalleryPage.openSql101TestTab();
         courseGalleryPage.backToHomePage();
     }
-
     @Test
-    public void courseGalleryPageSoftAssert() throws InterruptedException {
+    public void openSignInPageSoft_Assert() throws InterruptedException {
+        homePage.clickSignIn();
+        actualResult = driver.getTitle();
+        expectedResult = "Sign in";
+        //String soft assert passed
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualResult,expectedResult);
+        System.out.println("Title is correct \nFirst test done");
+        homePage.clickSignIn();
+        signInPage.fillInTheSignInForm();
+        signInPage.errorMessageIsDisplayed();
+        //boolean soft assert failed
+        boolean errorMessageIsDisplayedTrue = false;
+        softAssert.assertEquals(errorMessageIsDisplayedTrue, signInPage.errorMessageIsDisplayedAfterCredentials());
+        System.out.println("Second test done");
+        homePage.clickSignIn();
+        signInPage.fillInTheSignInForm();
+        signInPage.errorMessageIsDisplayed();
+        //boolean soft assert failed
+        SoftAssert soft_Assert = new SoftAssert();
+        softAssert.assertEquals(errorMessageIsDisplayedTrue, signInPage.errorMessageIsDisplayedAfterCredentials());
+        System.out.println("Third test done");
         homePage.openHomePage();
         courseGalleryPage.openCourseGalleryPage();
         int expectedNumberOfElements = 3;
         //Int soft assert failed
-        SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(courseGalleryPage.actualNumberOfElements,expectedNumberOfElements);
         softAssert.assertAll();
         courseGalleryPage.openTestingTab();
         courseGalleryPage.openSql101TestTab();
         courseGalleryPage.backToHomePage();
+        System.out.println("Fourth test done");
     }
 
-    @Test
-    public void signUpPageAllElementsInTheDropDown(){
-        homePage.openHomePage();
-        homePage.clickSignUp();
-        signUpPage.writeDropDownInConsole();
-    }
 }

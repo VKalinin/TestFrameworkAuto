@@ -39,7 +39,7 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
     @AfterTest
-    public void driverClose(){
-//        driver.close();
+    public void driverQuit(){
+        driver.quit();
     }
 }
