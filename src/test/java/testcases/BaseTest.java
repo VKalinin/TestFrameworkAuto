@@ -29,7 +29,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUp(){
 
-        System.setProperty("webdriver.chrome.driver", "/Users/vladkalinin/Documents/GitHub/TestFrameworkAuto/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/vladkalinin/Documents/GitHub/TestFrameworkAuto/src/test/resources/executables/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);

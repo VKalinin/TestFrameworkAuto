@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Asserts" parallel="classes" thread-count="2" verbose="1" >
+    <test name="Assert + LogIn" >
+        <classes>
+            <class name="testcases.HardAssertTestSuite" />
+            <class name="testcases.SoftAssertTestSuite" />
+            <class name="testcases.LogInTest" />
+        </classes>
+    </test>
+
+    <test name="LogIn + SignUp + SoftAssert">
+        <classes>
+            <class name="testcases.LogInTest"/>
+            <class name="testcases.SignUpTest"/>
+            <class name="testcases.SoftAssertTestSuite"/>
+        </classes>
+    </test>
+</suite>
